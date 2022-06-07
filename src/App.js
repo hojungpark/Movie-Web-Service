@@ -1,6 +1,7 @@
 // import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { useEffect, useState } from "react";
+import Movie from "./components/movie";
 
 // import Home from "./routes/Home";
 function App() {
@@ -24,16 +25,7 @@ function App() {
       ) : (
         <div>
           {movies.map((movie) => (
-            <div key={movie.id}>
-              <img src={movie.medium_cover_image} />
-              <h2>{movie.title}</h2>
-              <p>{movie.summary}</p>
-              <ul>
-                {movie.genres.map((g) => (
-                  <li key={g}>{g}</li>
-                ))}
-              </ul>
-            </div>
+            <Movie />
           ))}
         </div>
       )}
