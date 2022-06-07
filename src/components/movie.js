@@ -1,16 +1,16 @@
-function Movie() {
-  return {movies.map((movie) => (
-    <div key={movie.id}>
-      <img src={movie.medium_cover_image} />
-      <h2>{movie.title}</h2>
-      <p>{movie.summary}</p>
+function Movie({ coverImg, title, summary, genres }) {
+  return (
+    <div>
+      <img src={coverImg} />
+      <h1>{title}</h1>
+      <p>{summary}</p>
       <ul>
-        {movie.genres.map((g) => (
+        {genres.map((g) => (
           <li key={g}>{g}</li>
         ))}
       </ul>
     </div>
-  ))};
+  );
 }
 
 export default Movie;
