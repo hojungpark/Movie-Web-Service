@@ -1,9 +1,6 @@
-// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
 import { useEffect, useState } from "react";
-import Movie from "./components/movie";
+import Movie from "./components/Movie";
 
-// import Home from "./routes/Home";
 function App() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -25,7 +22,13 @@ function App() {
       ) : (
         <div>
           {movies.map((movie) => (
-            <Movie />
+            <Movie
+              key={movie.id}
+              coverImg={movie.medium_cover_image}
+              title={movie.title}
+              summary={movie.summary}
+              genres={movie.genres}
+            />
           ))}
         </div>
       )}
