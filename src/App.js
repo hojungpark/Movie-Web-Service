@@ -19,7 +19,18 @@ function App() {
   }, []);
   return (
     <div>
-      <h1>{loading ? "Loading..." : "Done!"}</h1>
+      {loading ? (
+        "Loading..."
+      ) : (
+        <div>
+          {movies.map((movie) => (
+            <div key={movie.id}>
+              <img src={movie.medium_cover_image} />
+              <h2>{movie.title}</h2>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
