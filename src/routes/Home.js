@@ -6,7 +6,7 @@ function Home() {
   const [loading, setLoading] = useState(true);
   const getMovies = async () => {
     const reponse = await fetch(
-      `https://yts.mx/api/v2/list_movies.json?minimum_rating=9&sort_by=year`
+      `https://yts.mx/api/v2/list_movies.json?minimum_rating=8&sort_by=year`
     );
     const json = await reponse.json();
     setMovies(json.data.movies);
